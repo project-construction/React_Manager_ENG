@@ -63,16 +63,6 @@ const Header = () => {
 
       <Collapse navbar isOpen={isOpen}>
         <Nav className="me-auto" navbar>
-          <NavItem>
-            <Link to="/alerts" className="nav-link">
-              공지사항
-            </Link>
-          </NavItem>
-          <NavItem>
-            <Link to="/forms" className="nav-link">
-              로그인
-            </Link>
-          </NavItem>
         </Nav>
         <Dropdown isOpen={dropdownOpen} toggle={toggle}>
           <DropdownToggle color="transparent">
