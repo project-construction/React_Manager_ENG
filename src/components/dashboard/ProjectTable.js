@@ -19,7 +19,7 @@ const UserInfo = ({selectedUser}) => {
             <h2>{selectedUser.name}</h2>
             <p>email : {selectedUser.email}</p>
             <p>전화번호 :{selectedUser.phone}</p>
-            <p>생일 : {parseInt(selectedUser.birth.substring(0,2))+2000}년 {selectedUser.birth.substring(2,4).padStart(2, "0")}월 
+            <p>생일 : {parseInt(selectedUser.birth.substring(0,2))+2000}년 {selectedUser.birth.substring(2,4).padStart(2, "0")}월
                 {selectedUser.birth.substring(4,6).padStart(2, "0")}일</p>
             <p>성별 : {selectedUser.gender}</p>
             <p>주소 : {selectedUser.address}</p>
@@ -64,7 +64,7 @@ const ProjectTables = (props) => {
                 },
                 mode: 'cors'
             });
-            
+
 
             if (!response.ok) {
                 throw new Error('Request failed');
@@ -83,7 +83,7 @@ const ProjectTables = (props) => {
             console.error('Error fetching user data:', error);
         }
     };
-    
+
 
     const fetchData = async (searchText) => {
         try {
@@ -117,7 +117,7 @@ const ProjectTables = (props) => {
         try {
             const params = new URLSearchParams();
             params.append('email', searchText);
-            const response = await fetch(`https://port-0-spring-eu1k2llldpju8v.sel3.cloudtype.app/worker/score?email=${searchText}`, {
+            const response = await fetch(`http://localhost:8080/worker/score?email=${searchText}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -151,7 +151,7 @@ const ProjectTables = (props) => {
     };
 
     useEffect(() => {
-        
+
     }, []); // Fetch user data when the component mounts
 
 
@@ -159,7 +159,7 @@ const ProjectTables = (props) => {
         <div>
             <Card>
                 <CardBody>
-                    <CardTitle tag="h5">노동자 관리</CardTitle>
+                    <CardTitle tag="h5">Manage</CardTitle>
                     <input
                         type="text"
                         placeholder="Search..."
@@ -170,8 +170,8 @@ const ProjectTables = (props) => {
                     <Table className="no-wrap mt-3 align-middle" responsive borderless>
                         <thead>
                         <tr>
-                            <th>노동자명</th>
-                            <th>검사결과</th>
+                            <th>Name</th>
+                            <th>Test Result</th>
                         </tr>
                         </thead>
                         <tbody>

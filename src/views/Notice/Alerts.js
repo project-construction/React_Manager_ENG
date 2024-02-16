@@ -19,7 +19,7 @@ const Alerts = () => {
 
   const fetchNotices = async () => {
     try {
-      const response = await fetch("https://port-0-spring-eu1k2llldpju8v.sel3.cloudtype.app/notice/all");
+      const response = await fetch("http://localhost:8080/notice/all");
       const data = await response.json();
       setNotices(data);
     } catch (error) {
@@ -31,7 +31,7 @@ const Alerts = () => {
     if (searchOption === "title") {
       // 제목으로 검색하는 로직
       try {
-        const response = await fetch(`https://port-0-spring-eu1k2llldpju8v.sel3.cloudtype.app/notice/title/${searchKeyword}`);
+        const response = await fetch(`http://localhost:8080/notice/title/${searchKeyword}`);
         const data = await response.json();
         setNotices(data);
       } catch (error) {
@@ -40,7 +40,7 @@ const Alerts = () => {
     } else if (searchOption === "author") {
       // 작성자로 검색하는 로직
       try {
-        const response = await fetch(`https://port-0-spring-eu1k2llldpju8v.sel3.cloudtype.app/notice/writer/${searchKeyword}`);
+        const response = await fetch(`http://localhost:8080/notice/writer/${searchKeyword}`);
         const data = await response.json();
         setNotices(data);
       } catch (error) {
@@ -57,10 +57,10 @@ const Alerts = () => {
       <div>
         <Card>
           <CardTitle tag="h6" className="border-bottom p-3 mb-2 mt-2 d-flex align-items-center">
-            <h2 className="flex-grow-1 m-0">&nbsp;공지사항</h2>
+            <h2 className="flex-grow-1 m-0">&nbsp;Notice</h2>
             <Link to="/Write" className="Buttons-link">
               <Button className="btn" color="secondary">
-                글쓰기
+                Add Notice
               </Button>
             </Link>
           </CardTitle>
@@ -69,10 +69,10 @@ const Alerts = () => {
             <Table striped>
               <thead>
               <tr>
-                <th>번호</th>
-                <th>제목</th>
-                <th>작성자</th>
-                <th>날짜</th>
+                <th>Number</th>
+                <th>Title</th>
+                <th>Name</th>
+                <th>Date</th>
               </tr>
               </thead>
               <tbody>
@@ -100,8 +100,8 @@ const Alerts = () => {
                       value={searchOption}
                       onChange={handleSearchOptionChange}
                   >
-                    <option value="title">제목</option>
-                    <option value="author">작성자</option>
+                    <option value="title">Title</option>
+                    <option value="author">Name</option>
                   </Input>
                 </FormGroup>
               </Col>
@@ -109,7 +109,7 @@ const Alerts = () => {
                 <FormGroup>
                   <Input
                       type="text"
-                      placeholder="검색어 입력"
+                      placeholder="Search.."
                       value={searchKeyword}
                       onChange={(e) => setSearchKeyword(e.target.value)}
                   />
@@ -117,7 +117,7 @@ const Alerts = () => {
               </Col>
               <Col md="2">
                 <Button onClick={handleSearch} color="secondary">
-                  검색
+                  Search
                 </Button>
               </Col>
             </Row>

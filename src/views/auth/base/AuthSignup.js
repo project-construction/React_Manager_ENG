@@ -76,7 +76,7 @@ const AuthRegister = ({ title, subtitle, subtext }) => {
     const handleSubmit = async () => {
         if (passwordsMatch) {
             try {
-                const response = await fetch('https://port-0-spring-eu1k2llldpju8v.sel3.cloudtype.app/auth/signup', {
+                const response = await fetch('http://localhost:8080/auth/signup', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -118,12 +118,12 @@ const AuthRegister = ({ title, subtitle, subtext }) => {
             <Box>
                 <Stack mb={5}>
                     <Typography variant="subtitle1" fontWeight={600} component="label" htmlFor="id" mb="5px">
-                        아이디
+                        ID
                     </Typography>
                     <CustomTextField id="id" variant="outlined" fullWidth value={id} onChange={handleIdChange} />
 
                     <Typography variant="subtitle1" fontWeight={600} component="label" htmlFor="password" mb="5px" mt="25px">
-                        비밀번호
+                        Password
                     </Typography>
                     <CustomTextField
                         id="password"
@@ -135,7 +135,7 @@ const AuthRegister = ({ title, subtitle, subtext }) => {
                     />
 
                     <Typography variant="subtitle1" fontWeight={600} component="label" htmlFor="setPassword" mb="5px" mt="25px">
-                        비밀번호 확인
+                        Confirm your password
                     </Typography>
                     <CustomTextField
                         id="confirm_password"
@@ -148,27 +148,27 @@ const AuthRegister = ({ title, subtitle, subtext }) => {
 
                     {!passwordsMatch && (
                         <Typography color="error" variant="body2">
-                            비밀번호가 일치하지 않습니다.
+                            Password does not match.
                         </Typography>
                     )}
 
                     <Typography variant="subtitle1" fontWeight={600} component="label" htmlFor="division" mb="5px" mt="25px">
-                        소속
+                        Team
                     </Typography>
                     <CustomTextField id="team" variant="outlined" fullWidth value={team} onChange={handleTeamChange} />
 
                     <Typography variant="subtitle1" fontWeight={600} component="label" htmlFor="name" mb="5px" mt="25px">
-                        이름
+                        Name
                     </Typography>
                     <CustomTextField id="name" variant="outlined" fullWidth value={name} onChange={handleNameChange} />
 
                     <Typography variant="subtitle1" fontWeight={600} component="label" htmlFor="birthday" mb="5px" mt="25px">
-                        생년월일
+                        Birth
                     </Typography>
                     <CustomTextField id="birthday" variant="outlined" fullWidth value={birthday} onChange={handleBirthdayChange} />
 
                     <Typography variant="subtitle1" fontWeight={600} component="label" htmlFor="gender" mb="5px" mt="25px">
-                        성별
+                        Gender
                     </Typography>
                     <div style={{ display: 'flex', gap: '10px' }}>
                         <label>
@@ -178,7 +178,7 @@ const AuthRegister = ({ title, subtitle, subtext }) => {
                                 checked={selectedGender === 'male'}
                                 onChange={handleGenderChange}
                             />
-                            남성
+                            Male
                         </label>
                         <span style={{ margin: '0 56px' }}></span>
                         <label>
@@ -188,26 +188,26 @@ const AuthRegister = ({ title, subtitle, subtext }) => {
                                 checked={selectedGender === 'female'}
                                 onChange={handleGenderChange}
                             />
-                            여성
+                            Female
                         </label>
                     </div>
 
                     <Typography variant="subtitle1" fontWeight={600} component="label" htmlFor="email" mb="5px" mt="25px">
-                        이메일
+                        Email
                     </Typography>
                     <CustomTextField id="email" variant="outlined" fullWidth value={email} onChange={handleEmailChange} />
                     <Typography variant="subtitle1" fontWeight={600} component="label" htmlFor="phone_number" mb="5px" mt="25px">
-                        휴대전화
+                        Phone
                     </Typography>
                     <CustomTextField id="phone_number" variant="outlined" fullWidth value={phoneNumber} onChange={handlePhoneNumberChange} />
 
                     <Typography variant="subtitle1" fontWeight={600} component="label" htmlFor="address" mb="5px" mt="25px">
-                        주소
+                        Address
                     </Typography>
                     <CustomTextField id="address" variant="outlined" fullWidth value={address} onChange={handleAddressChange} />
 
                     <Typography variant="subtitle1" fontWeight={600} component="label" htmlFor="note" mb="5px" mt="25px">
-                        특이사항
+                        Comment
                     </Typography>
                     <CustomTextField id="note" variant="outlined" fullWidth value={note} onChange={handleNoteChange} />
                 </Stack>

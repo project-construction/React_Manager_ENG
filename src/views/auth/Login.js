@@ -39,12 +39,12 @@ const Login = () => {
                     >
                         <Card elevation={9} sx={{ p: 4, zIndex: 1, width: '100%', maxWidth: '500px' }}>
                             <Box display="flex" alignItems="center" justifyContent="center">
-                                건설현장
+                                Login
                             </Box>
                             <AuthLogin
                                 subtext={
                                     <Typography variant="subtitle1" textAlign="center" color="textSecondary" mb={1}>
-                                        관리자 로그인
+                                        Access to our dashboard!
                                     </Typography>
                                 }
                                 subtitle={

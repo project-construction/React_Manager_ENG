@@ -146,14 +146,14 @@ const Cards = ({onCreate}) => {
 
     return (
         <div className="card-container">
-            <h2>일정 추가</h2>
+            <h2>Add Schedule</h2>
             <div>
                 <DatePicker className="date"
                             dateFormat="yyyy년 MM월 dd일 eee요일"
                             dateFormatCalendar="yyyy년 MM월"
                             locale={ko}
                             timeCaption="날짜 선택"
-                            placeholderText="날짜 선택"
+                            placeholderText="Date"
                             selected={selectedDate}
                             minDate={getCurrentTime()}
                             onChange={handleDateChange}
@@ -172,7 +172,7 @@ const Cards = ({onCreate}) => {
                     <div>
                         <input className={"schedule"}
                                ref={scheduleInput}
-                               placeholder="일정"
+                               placeholder="Schedule"
                                value={schedule.content}
                                onChange={(e) => {
                                    const updatedSchedules = [...schedules];
@@ -198,7 +198,7 @@ const Cards = ({onCreate}) => {
                                     maxTime={dayjs().endOf("day").toDate()}
                                     timeCaption="Time"
                                     dateFormat="aa h:mm ~"
-                                    placeholderText="시작 시간"
+                                    placeholderText="Time"
                                     className="start_time"
                         />
 
@@ -208,7 +208,7 @@ const Cards = ({onCreate}) => {
                             color ="danger"
                             style = {{marginLeft:"10px"}}
                         >
-                            삭제
+                            Delete
                         </Button>
                     </div>
                 </div>
@@ -219,11 +219,11 @@ const Cards = ({onCreate}) => {
                 <Button onClick={handleAddSchedule}
                         name="schedule-bot"
                         style = {{marginRight:"10px"}}
-                >일정 추가</Button>
+                >Add</Button>
                 <Button onClick={handleSubmit}
                         name="save-bot"
                         color = "primary"
-                >저장</Button>
+                >Apply</Button>
             </div>
         </div>
     );

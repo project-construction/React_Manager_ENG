@@ -102,9 +102,9 @@ const SalesChart = (props) => {
   return (
       <Card>
         <CardBody>
-          <CardTitle tag="h5">이행률</CardTitle>
+          <CardTitle tag="h5">Reports</CardTitle>
           <CardSubtitle className="text-muted" tag="h6">
-            일별 이행률 그래프
+
           </CardSubtitle>
           <Chart
               options={chartData.options} // Use chartData.options

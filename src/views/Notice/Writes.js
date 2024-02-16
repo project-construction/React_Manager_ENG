@@ -28,7 +28,7 @@ const Writes = () => {
 
         };
 
-        fetch('https://port-0-spring-eu1k2llldpju8v.sel3.cloudtype.app/notice/write', requestOptions)
+        fetch('http://localhost:8080/notice/write', requestOptions)
             .then(response => response)
             .then(data => {
                 console.log('submitted:', data);
@@ -44,7 +44,7 @@ const Writes = () => {
         <div>
             <Card>
                 <CardTitle tag="h6" className="border-bottom p-3 mb-2 mt-2">
-                    <h2 className="flex-grow-1 m-0">&nbsp;공지사항 입력</h2>
+                    <h2 className="flex-grow-1 m-0">&nbsp;Creating a Notice</h2>
                 </CardTitle>
                 <CardBody className="">
                     <Form onSubmit={handleSubmit}>
@@ -55,7 +55,7 @@ const Writes = () => {
                                 value={title}
                                 onChange={e => setTitle(e.target.value)}
                                 style={{ width: '100%' }}
-                                placeholder="제목"
+                                placeholder="Title"
                                 required
                             />
                         </FormGroup>
@@ -66,11 +66,11 @@ const Writes = () => {
                                 value={content}
                                 onChange={e => setContent(e.target.value)}
                                 style={{ width: '100%', minHeight: '500px' }}
-                                placeholder="내용"
+                                placeholder="Content"
                                 required
                             />
                         </FormGroup>
-                        <Button type="submit" className="btn" color="secondary">등록</Button>
+                        <Button type="submit" className="btn" color="secondary">Submit</Button>
                     </Form>
                 </CardBody>
             </Card>

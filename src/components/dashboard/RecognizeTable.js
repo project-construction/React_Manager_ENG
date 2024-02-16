@@ -14,7 +14,7 @@ const ProjectTables = () => {
 
     useEffect(() => {
         // API에서 노동자 정보 가져오기 (GET 방식)
-        fetch(`https://port-0-spring-eu1k2llldpju8v.sel3.cloudtype.app/worker/wait`, requestOptions)
+        fetch(`http://localhost:8080/worker/wait`, requestOptions)
             .then(response => response.json())
             .then(data => {
                 // 가져온 데이터로 tableData 상태 업데이트
@@ -36,7 +36,7 @@ const ProjectTables = () => {
         };
 
         // 노동자 승인 API 호출
-        fetch(`https://port-0-spring-eu1k2llldpju8v.sel3.cloudtype.app/worker/approval?email=${email}`, requestOptions)
+        fetch(`http://localhost:8080/worker/approval?email=${email}`, requestOptions)
             .then(response => response.json())
             .then(data => {
                 // 승인 상태를 업데이트합니다.
@@ -56,7 +56,7 @@ const ProjectTables = () => {
         };
 
         // 노동자 거부 API 호출
-        fetch('https://port-0-spring-eu1k2llldpju8v.sel3.cloudtype.app/worker/rejection', requestOptions)
+        fetch('http://localhost:8080/worker/rejection', requestOptions)
             .then(response => response.json())
             .then(data => {
                 // 거부 상태를 업데이트합니다.
@@ -82,17 +82,17 @@ const ProjectTables = () => {
         <div>
             <Card>
                 <CardBody>
-                    <CardTitle tag="h5">노동자 권한 설정</CardTitle>
+                    <CardTitle tag="h5">Set Permissions</CardTitle>
                     <Table className="no-wrap mt-3 align-middle" responsive borderless>
                         <thead>
                         <tr>
-                            <th>노동자명</th>
-                            <th>소속</th>
-                            <th>생년월일</th>
-                            <th>성별</th>
-                            <th>연락처</th>
-                            <th>주소</th>
-                            <th>승인 여부</th>
+                            <th>Name</th>
+                            <th>Team</th>
+                            <th>Birth</th>
+                            <th>Gender</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Status</th>
                         </tr>
                         </thead>
                         <tbody>

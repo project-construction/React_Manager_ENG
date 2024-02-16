@@ -19,7 +19,7 @@ const Feeds = () => {
 
   const fetchNotices = async () => {
     try {
-      const response = await fetch("https://port-0-spring-eu1k2llldpju8v.sel3.cloudtype.app/notice/all");
+      const response = await fetch("http://localhost:8080/notice/all");
       const data = await response.json();
       setNotices(data);
     } catch (error) {
@@ -30,7 +30,7 @@ const Feeds = () => {
   return (
     <Card>
       <CardBody>
-        <CardTitle tag="h5">공지사항</CardTitle>
+        <CardTitle tag="h5">Notice</CardTitle>
         <ListGroup flush className="mt-4">
           {notices.map((feed, index) => (
             (index < 7 &&

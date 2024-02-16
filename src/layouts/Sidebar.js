@@ -5,32 +5,32 @@ import probg from "../assets/images/bg/download.jpg";
 
 const navigationLogin = [
   {
-    title: "메인뷰",
+    title: "Main",
     href: "/starter",
     icon: "bi bi-speedometer2",
   },
   {
-    title: "공지사항",
+    title: "Notice",
     href: "/alerts",
     icon: "bi bi-bell",
   },
   {
-    title: "노동자 관리",
+    title: "Employees",
     href: "/table",
     icon: "bi bi-layout-split",
   },
   {
-    title: "일정 관리",
+    title: "Calendar",
     href: "/cards",
     icon: "bi bi-card-text",
   },
   {
-    title: "전자서명",
+    title: "Sign",
     href: "/pdflist",
     icon: "bi bi-patch-check",
   },
   {
-    title: "로그인",
+    title: "Login",
     href: "/login",
     icon: "bi bi-textarea-resize",
   },
@@ -61,7 +61,7 @@ const Sidebar = () => {
             <i className="bi bi-x"></i>
           </Button>
         </div>
-        <div className="bg-dark text-white p-2 opacity-75">관리자</div>
+        <div className="bg-dark text-white p-2 opacity-75">Admin</div>
       </div>
       <div className="p-3 mt-2">
         <Nav vertical className="sidebarNav">
@@ -76,7 +76,7 @@ const Sidebar = () => {
                 }
               >
                 <i className={navi.icon}></i>
-                <span className="ms-3 d-inline-block">{navi.title}</span>
+                <span className="ms-2 d-inline-block">{navi.title}</span>
               </Link>
             </NavItem>
           ))}

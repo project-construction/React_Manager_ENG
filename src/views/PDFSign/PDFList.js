@@ -111,10 +111,10 @@ const PDFList = () => {
         <div>
             <Card>
                 <CardTitle tag="h6" className="border-bottom p-3 mb-2 mt-2">
-                    <h2 className="m-1">&nbsp;전자서명</h2>
+                    <h2 className="m-1">&nbsp;Sign</h2>
                     <div className="m-1" {...getRootProps()} style={dropzoneStyles}>
                         <input {...getInputProps()} />
-                        <p>PDF 파일을 여기에 끌어다 놓거나 클릭하여 업로드하세요.<br />
+                        <p>Drag the PDF file here or click to upload it.<br />
                             {file&&(<p> 현재 업로드 된 파일: {file.path} </p>)
 
                             }
@@ -127,7 +127,7 @@ const PDFList = () => {
                             color="primary"
                             onClick={handleSubmit}
                             style = {{marginTop: "10px"}}>
-                            저장
+                            Save
                         </Button>
                     )}
                 </CardTitle>
@@ -136,10 +136,10 @@ const PDFList = () => {
                     <Table striped>
                         <thead>
                         <tr>
-                            <th>번호</th>
-                            <th>제목</th>
-                            <th>날짜</th>
-                            <th>선택</th>
+                            <th>Number</th>
+                            <th>Title</th>
+                            <th>Date</th>
+                            <th>Select</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -192,7 +192,7 @@ const PDFList = () => {
                                                 color="danger"
                                                 onClick={() => handleDelete(sign.id)}
                                             >
-                                                삭제
+                                                Delete
                                             </Button>
                                         </td>
                                     </tr>
